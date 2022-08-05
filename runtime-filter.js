@@ -13,8 +13,8 @@
     let { categoryName, level, context } = logEvent;
 
     if (level.isGreaterThanOrEqualTo(defaultLevel) || 
-    categoryFilterFn(categoryName, level["levelStr"]) || 
-    contextFilterFn(context, level["levelStr"])) {
+    categoryFilterFn(categoryName, level) || 
+    contextFilterFn(context, level)) {
       appenders.forEach((appender) => {
         appender(logEvent);
       });
